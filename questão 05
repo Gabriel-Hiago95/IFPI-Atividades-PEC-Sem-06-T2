@@ -1,0 +1,25 @@
+def e_vogal(carac):
+    return carac in ('a, e, i, o, u, A, E, I, O, U')
+
+def e_consoante(carac):
+    return carac.isalpha() and carac not in ('a, e, i, o, u, A, E, I, O, U')
+
+def e_numero(carac):
+    return carac.isnumeric()
+
+def main():
+    caractere = input('Digite um caractere qualquer (somente um único caractere): ').strip()
+    if caractere not in ('ç, Ç,  , á, Á, é, É, í, Í, Ó, ó, ú, Ú, ã, õ, Ã, Õ, ê, Ê, à, À'):
+        if e_vogal(caractere):
+            print(f'O caractere {} que você digitou é uma vogal')
+        elif e_consoante(caractere):
+            print(f'O caractere {} que você digitou é uma consoante')
+        elif e_numero(caractere):
+            print(f'O caractere {} que você digitou é um número')
+        else:
+            print(f'O caractere {} que você digitou é um símbolo')
+    else:
+        print(f'O caractere {} que você digitou é um símbolo')
+
+if __name__ == '__main__':
+    main()
